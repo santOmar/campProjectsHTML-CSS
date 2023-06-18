@@ -1,0 +1,13 @@
+h1, p {
+    text-align: center;
+    margin: 1em auto;
+}
+
+form {
+    width: 70vw;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+}
