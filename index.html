@@ -36,15 +36,15 @@
             </fieldset>
             <fieldset>
                 <label>Select the use:
-                    <label><input type="radio" name="typeAccount" class="inline" /> Personal use</label>
-                    <label><input type="radio" name="typeAccount" class="inline" /> Projects</label>
-                    <label><input type="radio" name="typeAccount" class="inline" /> Software Development</label>
+                    <label><input type="radio" name="typeAccount" class="inline" value="0" /> Personal use</label>
+                    <label><input type="radio" name="typeAccount" class="inline" value="1" /> Projects</label>
+                    <label><input type="radio" name="typeAccount" class="inline" value="2" /> Software Development</label>
                 </label>
             </fieldset>
             <fieldset>
                 <label>
                     What kind of information you like?
-                    <label><input type="checkbox" class="inline" value="" /> Python</label>
+                    <label><input type="checkbox" class="inline" value="0" /> Python</label>
                     <label><input type="checkbox" class="inline" value="1" /> Data Science</label>
                     <label><input type="checkbox" class="inline" value="2" /> Web</label>
                     <label><input type="checkbox" class="inline" value="2" /> OOP</label>
@@ -59,7 +59,7 @@
                     <textarea id="addComment" name="addComment" rows="3" cols="30" placeholder="I really like this page"></textarea>
                 </label>
             </fieldset>
-                <input type="submit" value="Submit" />
+            <input id="submit" type="submit" value="Submit" />
         </form>
     </body>
 </html>
