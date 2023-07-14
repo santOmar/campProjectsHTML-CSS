@@ -2,15 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <!--basic header-->
         <title>HTML good practices</title>
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <header>HTML Good Practices</header>
         <nav id="navbar">
+            <header class="prim">HTML Good Practices</header>
             <ul>
-                <li><a class="nav-link" href="#docStructure">Document Structure</a></li>
+                <li><a class="nav-link" href="#docStructure">Document Structure</a></li>     <!--Using this list to navigate through sections-->
                 <li><a class="nav-link" href="#corrDoctype">Correct DOCTYPE</a></li>
                 <li><a class="nav-link" href="#pagLanguage">Page language</a></li>
                 <li><a class="nav-link" href="#selfClose">Always close or self-close the tags</a></li>
@@ -32,65 +32,272 @@
         </nav>
         
         <main id="main-doc">
-            <section class="main-section" id="docStructure">
+            <section class="main-section" id="docStructure">             <!--The link is here, for each section-->
                 <header>Document Structure</header>
-                <p>
-                    The proper document structure should be used, even if your code would still work without it. 
-                    But some browsers might not display the pages properly.
-                </p>
-                <p>Best Practice:</p>
+                <article>
+                    <p>
+                        The proper document structure should be used, even if your code would still work without it.
+                        But some browsers might not display the pages properly.
+                    </p>
+                    <p>Best Practice:</p>
+                    <code class="coder">&lt;!DOCTYPE html&gt; <!--Use &lt; and similar to create symbols < >-->
+                        &lt;html&gt;
+                        &emsp;&lt;head&gt;
+                        &emsp;&emsp;&lt;title&gt;Page title&lt;/title&gt;
+                        &emsp;&lt;/head&gt;
+                        &emsp;&lt;body&gt;
+                        &emsp;&emsp;&lt;!-- page content --&gt;
+                        &emsp;&lt;/body&gt;
+                        &lt;html&gt;</code>
+                </article>
             </section>
             <section class="main-section" id="corrDoctype">
                 <header>Correct DOCTYPE</header>
+                <article>
+                    <p>
+                        When writing HTML, the doctype is the first thing you have to write. This will let the browser
+                        know what standards you're using to render markup correctly. The doctype tag precedes the
+                        <code class="redLine">&lt;html&gt;</code> tag at the top of the page.
+                        <code class="coder"><strong>&lt;!DOCTYPE html&gt;</strong>
+                            &lt;html&gt;
+                            &emsp;&lt;head&gt;
+                            &emsp;&emsp;&lt;title&gt;Page title&lt;/title&gt;
+                            &emsp;&lt;/head&gt;
+                            &emsp;&lt;body&gt;
+                            &emsp;&emsp;&lt;!-- page content --&gt;
+                            &emsp;&lt;/body&gt;
+                            &lt;html&gt;</code>
+                    </p>
+                </article>
             </section>
             <section class="main-section" id="pagLanguage">
                 <header>Page language</header>
+                <article>
+                    <p>
+                        Screen readers will be able to select the appropriate language to announce if you specify the language
+                        of your website. Additionally, it helps browsers decide whether or not to translate your website automatically.
+                    </p>
+                    <code class="coder">&lt;!DOCTYPE html&gt;
+                        <strong>&lt;html lang="en"&gt;</strong>
+                            &emsp;&lt;head&gt;
+                            &emsp;&emsp;&lt;title&gt;Page title&lt;/title&gt;
+                            &emsp;&lt;/head&gt;
+                            &emsp;&lt;body&gt;
+                            &emsp;&emsp;&lt;!-- page content --&gt;
+                            &emsp;&lt;/body&gt;
+                            &lt;html&gt;</code>
+                </article>
             </section>
             <section class="main-section" id="selfClose">
                 <header>Always close or self-close the tags</header>
+                <article>
+                    <p>To avoid validation errors, always remember that every tag you write needs a closing tag.</p>
+                    <code class="coder">&lt;h1&gtHeading 1&lt;/h1&gt
+                        &lt;p&gtParagraph Text&lt;/p&gt
+                        &lt;img src="example.jpg" alt="Example Image" /&gt;
+                    </code>
+                </article>
             </section>
             <section class="main-section" id="inStyles">
                 <header>Don't use inline styles</header>
+                <article>
+                    <p>
+                        It might seem easier to style with the inline code rather than creating an external
+                        style file. Inline styles are not a suggested coding technique, though, as they make
+                        websites more challenging to manage and update.
+                    </p>
+                    <code class="coder">&lt;!DOCTYPE html&gt;
+                        &lt;html lang="en"&gt;
+                        &emsp;&lt;head&gt;
+                        &emsp;&emsp;&lt;title&gt;Page title&lt;/title&gt;
+                        <strong>&emsp;&emsp;&lt;link rel="stylesheet" href="styles.css"&gt;</strong>
+                        &emsp;&lt;/head&gt;
+                        &emsp;&lt;body&gt;
+                        &emsp;&emsp;&lt;!-- page content --&gt;
+                        &emsp;&lt;/body&gt;
+                        &lt;html&gt;
+                    </code>
+                </article>
             </section>
             <section class="main-section" id="specify">
                 <header>Always Specify alt, width, and height for Images</header>
+                <article>
+                    <p>Since an alt attribute is not required for images, it is easy to ignore it. But, it's important 
+                    to have a meaningful alt attribute for accessibility and validation reasons. Screen readers rely on 
+                    the alt element for context, therefore it ought to explain what the image contains..</p>
+                    <code class="coder">&lt;img src="image.jpg" alt="a descriptive text"&gt;</code>
+                </article>
             </section>
             <section class="main-section" id="validate">
                 <header>Validate frequently</header>
+                <article>
+                    <p>Validate your code often while you work rather than waiting until your HTML document is complete.
+                    The sooner you identify errors, especially if your work is comprehensive, the more time you will save. 
+                    One popular HTML validator to use is <a href="https://validator.w3.org/">W3C Markup Validator.</a></p>
+                </article>
             </section>
             <section class="main-section" id="externalStyle">
                 <header>Place external style sheets within the tag</header>
+                <article>
+                    <p>
+                        The tag is the best place for external style sheets even though they can be included anywhere in an
+                        HTML document. It speeds up the loading of the page.
+                    </p>
+                    <code class="coder">&lt;!DOCTYPE html&gt;
+                        &lt;html lang="en"&gt;
+                        &emsp;&lt;head&gt;
+                        &emsp;&emsp;&lt;title&gt;Page title&lt;/title&gt;
+                        <strong>&emsp;&emsp;&lt;link rel="stylesheet" href="styles.css"&gt;</strong>
+                        &emsp;&lt;/head&gt;
+                        &emsp;&lt;body&gt;
+                        &emsp;&emsp;&lt;!-- page content --&gt;
+                        &emsp;&lt;/body&gt;
+                        &lt;html&gt;
+                    </code>
+                </article>
             </section>
             <section class="main-section" id="avoidExcess">
                 <header>Avoid Excessive Comments</header>
+                <article>
+                    <p>Keep your comments to a minimum. Do not randomly write comments; only write them when they are necessary.</p>
+                    <code class="coder">&lt;!DOCTYPE html&gt;
+                        &lt;html lang="en"&gt;
+                        &emsp;&lt;head&gt;
+                        &emsp;&emsp;&lt;title&gt;Page title&lt;/title&gt;
+                        &emsp;&emsp;&lt;link rel="stylesheet" href="styles.css"&gt;
+                        &emsp;&lt;/head&gt;
+                        &emsp;&lt;body&gt;
+                        &emsp;&emsp;&lt;h1&gt;Heading 1&lt;/h1&gt;
+                        <strong>&emsp;&emsp;&lt;!-- This is a comment that is not needed --&gt;</strong>
+                        &emsp;&emsp;&lt;p&gt;Paragraph Text&lt;/p&gt;
+                        &emsp;&lt;/body&gt;
+                        &lt;html&gt;
+                    </code>
+                </article>
             </section>
             <section class="main-section" id="fieldsetLabel">
                 <header>Use Fieldset and Labels in Web Forms</header>
+                <article>
+                    <p>When building web forms, it's important to use the HTML &lt;fieldset> and &lt;label> elements 
+                    for better structure, organization, and accessibility.</p>
+                    <code class="coder">&lt;form&gt;
+                        &emsp;&lt;fieldset&gt;
+                        &emsp;&emsp;&lt;legend>Personal Details&lt;/legend>
+                        &emsp;&emsp;&lt;label for="name">Name:&lt;/label>
+                        &emsp;&emsp;&lt;input type="text" id="name" name="name">
+                        &emsp;&emsp;&lt;label for="email">Email:&lt;/label>
+                        &emsp;&emsp;&lt;input type="email" id="email" name="email">
+                        &emsp;&emsp;&lt;label for="message">Message:&lt;/label>
+                        &emsp;&emsp;&lt;textarea id="message" name="message">&lt;/textarea>
+                        &emsp;&lt;/fieldset&gt;
+                        &lt;/form&gt;
+                    </code>
+                </article>
             </section>
             <section class="main-section" id="lowercase">
                 <header>Use lowercase markup</header>
+                <article>
+                    <p>
+                        Although HTML permits uppercase markup as well, using lowercase markup for tags and attributes is
+                        recommended for consistency, compatibility, and accessibility reasons.
+                    </p>
+                </article>
+                <code class="coder">&lt;h1>Heading 1&lt;/h1>
+                    &lt;p>Paragraph Text&lt;/p>
+                    &lt;img src="example.jpg" alt="Example Image">
+                </code>
             </section>
             <section class="main-section" id="html5">
                 <header>HTML5 Semantic Elements</header>
+                <article>
+                    <p>The term refers to things that have meanings. There are countless semantic elements available. 
+                    Search engines will value your content more when it is written with semantic tags, which will improve your SEO.</p>
+                    <img src="https://user-images.githubusercontent.com/47534248/236609875-6028ef12-e378-4e6c-a853-77ea5cbfbbc3.jpg" alt="HTMLSemanticElements" />
+                </article>
             </section>
             <section class="main-section" id="meaningful">
                 <header>Use meaningful tags</header>
+                <article>
+                    <p>Meaningful HTML tags properly identify the data they contain, making the code easy to understand and
+                    read for both humans and search engines.</p>
+                    <code class="coder">&lt;header>
+                        &lt;h1>Page Title&lt;/h1>
+                        &lt;/header>
+                        &lt;nav>
+                        &emsp;&lt;ul>
+                        &emsp;&emsp;&lt;li>&lt;a href="#">Link 1&lt;/a>&lt;/li>
+                        &emsp;&emsp;&lt;li>&lt;a href="#">Link 2&lt;/a>&lt;/li>
+                        &emsp;&emsp;&lt;li>&lt;a href="#">Link 3&lt;/a>&lt;/li>
+                        &lt;/ul>
+                        &lt;/nav>
+                        &lt;main>
+                        &emsp;&lt;article>
+                        &emsp;&emsp;&lt;h2>Article Title&lt;/h2>
+                        &emsp;&emsp;&lt;p>Article Text&lt;/p>
+                        &emsp;&lt;/article>
+                        &emsp;&lt;section>
+                        &emsp;&emsp;&lt;h2>Section Title&lt;/h2>
+                        &emsp;&emsp;&lt;p>Section Text&lt;/p>
+                        &emsp;&lt;/section>
+                        &lt;/main>
+                        &lt;footer>
+                        &emsp;&lt;p>Footer Text&lt;/p>
+                        &lt;/footer&gt;
+                    </code>
+                </article>
             </section>
             <section class="main-section" id="seo">
                 <header>Keep SEO in mind</header>
+                <article>
+                    <p>
+                        SEO is important for HTML content. It is possible to boost a website's SEO and make it easier
+                        for search engines to understand the content of the page's structure and tags.
+                    </p>
+                    <p>Read this detailed thread on <a href="https://twitter.com/ishratUmar18/status/1531562660357021696?s=20">SEO tags for HTML.</a></p>
+                </article>
             </section>
             <section class="main-section" id="responsiveMeta">
                 <header>Always use responsive meta tags</header>
+                <article>
+                    <p>Always have a responsive website. Now that users may request a desktop or mobile experience via 
+                    their browser, the least you can do is make your site flexible, but responsiveness is a requirement.</p>
+                    <code class="coder">&lt;meta name="viewport" content="width=device-width, initial-scale=1"></code>
+                </article>
             </section>
             <section class="main-section" id="lazyload">
                 <header>Lazy load Images</header>
+                <article>
+                    <p>Lazy loading images make them load faster, as only the images within the viewport are initially loaded.</p>
+                    <code class="coder">&lt;img src="image.jpg" loading="lazy"></code>
+                </article>
             </section>
             <section class="main-section" id="captionImages">
                 <header>Add captions to images</header>
+                <article>
+                    <p>
+                        Use <code class="redLine">&lt;figcaption></code> along with <code class="redLine">&lt;figure></code>
+                        element to add captions to your images.
+                    </p>
+                </article>
+                <code class="coder">&lt;img src="image.jpg" alt="A beautiful landscape">
+                    &lt;figcaption>A beautiful landscape&lt;/figcaption>
+                    &lt;/figure>
+                </code>
             </section>
             <section class="main-section" id="imgCap">
                 <header>Images Captions</header>
+                <article>
+                    <p>
+                        Use <code class="redLine">&lt;figcaption></code> along with <code class="redLine">&lt;figure></code>
+                        element to add captions to images. As, this is important for accessibility and search engine optimization.
+                    </p>
+                    <code class="coder">&lt;figure>
+                        &emsp;&lt;img src="example-image.jpg" alt="Example image">
+                        &emsp;&lt;figcaption>This is an example image&lt;/figcaption>
+                        &lt;/figure>
+                    </code>
+                </article>
             </section>
-        </main>
-    </body>
+            </main>
+</body>
 </html>
